@@ -1,0 +1,7 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PT Sans", sans-serif;
+  --second-family: "Bebas Neue", sans-serif;  
+}

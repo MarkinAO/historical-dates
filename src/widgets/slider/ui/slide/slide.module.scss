@@ -1,0 +1,22 @@
+.container {
+  font-family: var(--second-family);
+  font-weight: 400;
+  cursor: default;
+  transition: all 0.5s;
+  .year {
+    font-size: 25px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #3877ee;
+  }
+
+  .text {
+    padding: 15px 0;
+    font-size: 20px;
+    line-height: 150%;
+    color: #42567a;
+  }
+  .limited {
+    cursor: pointer;
+  }
+}
