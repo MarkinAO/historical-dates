@@ -1,7 +1,44 @@
 .container {
-  display: flex;
-  justify-content: center;
-  .slide {
-    padding: 40px;
+  position: relative;
+  max-width: 1200px;
+
+  .next,
+  .prev {
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+    background-color: white;
+    .img {
+      width: 7px;
+    }
+  }
+  .prev {
+    left: -80px;
+    .img {
+      transform: rotate(180deg);
+    }
+  }
+
+  .next {
+    right: -80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    max-width: 300px;
+    margin-left: 20px;
+    .next,
+    .prev {
+      display: none;
+    }
   }
 }

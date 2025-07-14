@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from "./home.module.scss";
-import classNames from "classnames";
 import { Slider } from "@widgets/slider/slider";
 import { getHistoricalDates } from "@shared/api/api";
-import { TFact } from "@shared/model";
 import Loader from "@shared/ui/loader/Loader";
 import { useQuery } from "@tanstack/react-query";
 
 export const Home = () => {
-  const [timeSlot, setTimeSlot] = useState(0);
+  const [periodId, setPeriodId] = useState<String>();
   const { isPending, error, data } = useQuery({
     queryKey: [""],
-    queryFn: () => getHistoricalDates(),
+    queryFn: () => getHistoricalDates().then(data => {
+      setPeriodId(data[0].id);
+      return data;
+    }),
   });
 
   return (
@@ -21,7 +22,8 @@ export const Home = () => {
           <Loader />
         </div>
       ) : data && !error ? (
-        Slider(data[timeSlot])
+        <Slider facts={data.find((el) => el.id === periodId).facts}/>
+        
       ) : (
         <div className={style.error}>
           Что-то пошло не так. Обновите страницу.

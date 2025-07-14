@@ -1,8 +1,8 @@
 import mockData from "./mock";
-import type { TFact } from "@shared/model";
+import type { THistoryDates } from "@shared/model";
 
 //Функция имитирующая запрос на сервер
-export const getHistoricalDates = (): Promise<TFact[][]> => {
+export const getHistoricalDates = (): Promise<THistoryDates[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mockData);
