@@ -1,11 +1,10 @@
 export type TFact = {
-  year: string;
+  year: number;
   fact: string;
 };
 
 export type THistoryDates = {
   title: string;
-  period: string;
   id: string;
   facts: TFact[];
 };

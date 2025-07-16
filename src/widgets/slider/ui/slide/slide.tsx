@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./slide.module.scss";
-import type { TFact } from "@shared/model";
+import type { TFact } from "@shared/types/model";
 import classNames from "classnames";
 
 const Slide = ({ year, fact }: TFact) => {

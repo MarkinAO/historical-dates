@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import style from "./slider.module.scss";
 import { v4 as uuidv4 } from "uuid";
-import type { TFact } from "@shared/model";
+import type { TFact } from "@shared/types/model";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper/types";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Slide from "./ui/slide/slide";
-import arrow from "./ui/icons/arrow.svg";
 
 const swiperParams = {
   modules: [Pagination],
@@ -17,7 +16,7 @@ const swiperParams = {
     320: {
       slidesPerView: 1.5,
       spaceBetween: 25,
-      pagination: { clickable: true },      
+      pagination: { clickable: true },
     },
     1440: {
       slidesPerView: 3,
@@ -61,14 +60,16 @@ export const Slider: React.FC<SliderProps> = ({ facts = [] }) => {
             ))}
           </Swiper>
           {!isBeginning && (
-            <div className={style.prev} onClick={() => swiperRef?.slidePrev()}>
-              <img src={arrow} className={style.img} alt="prev" />
-            </div>
+            <div
+              className={style.prev}
+              onClick={() => swiperRef?.slidePrev()}
+            ></div>
           )}
           {!isEnd && (
-            <div className={style.next} onClick={() => swiperRef?.slideNext()}>
-              <img src={arrow} className={style.img} alt="next" />
-            </div>
+            <div
+              className={style.next}
+              onClick={() => swiperRef?.slideNext()}
+            ></div>
           )}
         </>
       )}

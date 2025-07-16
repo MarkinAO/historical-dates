@@ -1,5 +1,32 @@
 .container {
+  position: relative;
+  height: 100vh;
   max-width: 1440px;
+  width: 100%;
+  border-left: 1px solid rgba(66, 86, 122, 0.1);
+  border-right: 1px solid rgba(66, 86, 122, 0.1);
+
+  .lineCenter,  
+  .line {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100vh;
+    background-color: #42567a;
+    opacity: 0.1;
+  }
+
+  .lineCenter {
+    left: calc(50% - 1px);
+  }
+  
+  .line {
+    height: 1px;
+    width: 100%;
+    top: calc(50% - 1px);
+    left: 0;
+  }
+
   .loder {
     display: flex;
     justify-content: center;

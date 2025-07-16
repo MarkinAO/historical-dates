@@ -1,0 +1,45 @@
+.container {
+  position: relative;
+  height: 615px;
+  .title {
+    padding-left: 78px;
+    width: 431px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 120%;
+    color: #42567a;
+    background: url("./assets/svg/colorLine.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .period {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 88px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 80%;
+    letter-spacing: -0.02em;
+
+    .periodStart {
+      color: #5d5fef;
+    }
+    .periodEnd {
+      color: #ef5da8;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    height: 530px;
+    width: 530px;
+    border-radius: 100%;
+    border: 1px solid #42567a;
+  }
+}

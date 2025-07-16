@@ -1,5 +1,6 @@
 .container {
   position: relative;
+  margin: 0 auto;
   max-width: 1200px;
 
   .next,
@@ -15,20 +16,21 @@
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 10;
-    background-color: white;
-    .img {
-      width: 7px;
-    }
+    background-color: #ffffff;
   }
   .prev {
     left: -80px;
-    .img {
-      transform: rotate(180deg);
-    }
+    background-image: url("./assets/svg/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
   }
 
   .next {
     right: -80px;
+    background-image: url("./assets/svg/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
