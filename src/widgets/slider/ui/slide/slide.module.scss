@@ -12,9 +12,11 @@
 
   .text {
     padding: 15px 0;
+    min-height: 180px;
     font-size: 20px;
     line-height: 150%;
     color: #42567a;
+    transition: all 0.3s ease;
   }
   .limited {
     cursor: pointer;
@@ -27,7 +29,8 @@
       font-size: 16px;
     }
 
-    .text {
+    .text {    
+      min-height: 100px;  
       font-size: 14px;
       line-height: 145%;
     }

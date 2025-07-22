@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 const Slide = ({ year, fact }: TFact) => {
   const limitedText =
-    fact?.length > 150 ? fact.slice(0, 150).trim() + "..." : fact;
+    fact?.length > 100 ? fact.slice(0, 100).trim() + "..." : fact;
   const [isHidden, setIsHidden] = useState(true);
 
   return (
@@ -17,7 +17,7 @@ const Slide = ({ year, fact }: TFact) => {
       <div className={style.year}>{year}</div>
       <div
         className={
-          fact?.length > 150
+          fact?.length > 100
             ? classNames(style.text, style.limited)
             : style.text
         }

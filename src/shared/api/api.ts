@@ -6,6 +6,6 @@ export const getHistoricalDates = (): Promise<THistoryDates[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mockData);
-    }, 0);
+    }, 1000);
   });
 };

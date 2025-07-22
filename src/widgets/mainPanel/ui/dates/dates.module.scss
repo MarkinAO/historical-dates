@@ -1,0 +1,15 @@
+.newStartDate {
+  color: #5d5fef;
+}
+.newEndDate {
+  color: #ef5da8;
+}
+
+@media (max-width: 320px) {
+  .newStartDate,
+  .newEndDate {
+    font-weight: 700;
+    font-size: 56px;
+    letter-spacing: -0.02em;
+  }
+}

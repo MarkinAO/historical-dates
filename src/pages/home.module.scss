@@ -1,4 +1,5 @@
 .container {
+  padding-top: 10%;
   position: relative;
   height: 100vh;
   max-width: 1440px;
@@ -6,25 +7,8 @@
   border-left: 1px solid rgba(66, 86, 122, 0.1);
   border-right: 1px solid rgba(66, 86, 122, 0.1);
 
-  .lineCenter,  
-  .line {
-    position: absolute;
-    top: 0;
-    width: 1px;
-    height: 100vh;
-    background-color: #42567a;
-    opacity: 0.1;
-  }
-
-  .lineCenter {
-    left: calc(50% - 1px);
-  }
-  
-  .line {
-    height: 1px;
-    width: 100%;
-    top: calc(50% - 1px);
-    left: 0;
+  .contentWrap {
+    padding-left: 80px;
   }
 
   .loder {
@@ -42,9 +26,39 @@
     text-align: center;
     color: #42567a;
   }
+
+  .changePeriodButtons {
+    display: none;    
+  }
 }
 
-@media (max-width: 320px) {
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100vh;
+  background-color: #42567a;
+  opacity: 0.1;
+  left: calc(50%);
+}
+
+@media (max-width: 480px) {
   .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 280px;
+    padding: 0 20px;
+    border: none;
+    .contentWrap {
+      padding-left: 0;
+    }
+    .changePeriodButtons {
+      display: block;
+    }
+  }
+  .container::after {
+    display: none;
   }
 }

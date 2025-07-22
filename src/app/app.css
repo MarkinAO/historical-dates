@@ -5,3 +5,12 @@
   font-family: "PT Sans", sans-serif;
   --second-family: "Bebas Neue", sans-serif;  
 }
+
+button {    
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-size: inherit;
+  background: none;
+
+}

@@ -11,12 +11,16 @@ import Slide from "./ui/slide/slide";
 
 const swiperParams = {
   modules: [Pagination],
-
+  pagination: {
+    clickable: true,
+  },
   breakpoints: {
     320: {
       slidesPerView: 1.5,
       spaceBetween: 25,
-      pagination: { clickable: true },
+      pagination: {
+        clickable: true,
+      },
     },
     1440: {
       slidesPerView: 3,
@@ -40,10 +44,12 @@ export const Slider: React.FC<SliderProps> = ({ facts = [] }) => {
     setIsBeginning(swiper.isBeginning);
     setIsEnd(swiper.isEnd);
   };
+
   const onSlideChange = (swiper: SwiperClass) => {
     setIsBeginning(swiper.isBeginning);
     setIsEnd(swiper.isEnd);
   };
+
   return (
     <div className={style.container}>
       {facts.length > 0 && (
@@ -59,17 +65,21 @@ export const Slider: React.FC<SliderProps> = ({ facts = [] }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-          {!isBeginning && (
-            <div
-              className={style.prev}
-              onClick={() => swiperRef?.slidePrev()}
-            ></div>
-          )}
-          {!isEnd && (
-            <div
-              className={style.next}
-              onClick={() => swiperRef?.slideNext()}
-            ></div>
+          {facts.length > 3 && (
+            <>
+              {!isBeginning && (
+                <button
+                  className={style.prev}
+                  onClick={() => swiperRef?.slidePrev()}
+                ></button>
+              )}
+              {!isEnd && (
+                <button
+                  className={style.next}
+                  onClick={() => swiperRef?.slideNext()}
+                ></button>
+              )}
+            </>
           )}
         </>
       )}

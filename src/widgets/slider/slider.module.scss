@@ -1,6 +1,5 @@
 .container {
   position: relative;
-  margin: 0 auto;
   max-width: 1200px;
 
   .next,
@@ -27,14 +26,14 @@
   }
 
   .next {
-    right: -80px;
+    right: -120px;
     background-image: url("./assets/svg/arrow.svg");
     background-position: center;
     background-repeat: no-repeat;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 480px) {
   .container {
     max-width: 300px;
     margin-left: 20px;

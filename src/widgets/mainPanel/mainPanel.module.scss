@@ -1,16 +1,25 @@
 .container {
   position: relative;
-  height: 615px;
+  margin-bottom: 50px;
+
   .title {
-    padding-left: 78px;
+    position: relative;
     width: 431px;
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 56px;
     line-height: 120%;
     color: #42567a;
+  }
+  .title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: -82px;
+    height: 120px;
+    width: 100%;
     background: url("./assets/svg/colorLine.svg");
-    background-position: left;
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -21,25 +30,47 @@
     justify-content: center;
     align-items: center;
     gap: 88px;
+    left: -45px;
+    margin-top: 95px;
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 200px;
     line-height: 80%;
     letter-spacing: -0.02em;
+  }
+}
 
-    .periodStart {
-      color: #5d5fef;
+.container::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  max-width: 1440px;
+  width: 100vw;
+  top: 50%;
+  left: -80px;
+  background-color: #42567a;
+  opacity: 0.1;
+}
+
+@media (max-width: 480px) {
+  .container {    
+    border-bottom: 1px solid rgba(66, 86, 122, 0.1);
+
+    .title {
+      width: 125px;
+      font-size: 20px;
     }
-    .periodEnd {
-      color: #ef5da8;
+    .title::after,
+    .changePeriodButtonsWrap {
+      display: none;
+    }
+    .period {
+      margin-top: 0;
+      gap: 25px;
+      left: 0;
     }
   }
-
-  .circle {
-    position: absolute;
-    height: 530px;
-    width: 530px;
-    border-radius: 100%;
-    border: 1px solid #42567a;
+  .container::after {
+    display: none;
   }
 }
